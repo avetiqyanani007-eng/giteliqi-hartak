@@ -43,9 +43,9 @@ body {
 
 .board-copy {
   position: absolute;
-  left: 50%;
+  left: 7%;
   top: 15%;
-  width: 42%;
+  width: 48%;
   height: 30%;
   display: flex;
   flex-direction: column;
@@ -57,6 +57,7 @@ body {
   font-weight: 800;
   line-height: 1.18;
   text-shadow: 0 2px 3px #222;
+  z-index: 2;
 }
 .board-line { display: block; font-size: clamp(18px, 4vw, 62px); }
 .board-line-two { color: #ffc02b; font-size: clamp(16px, 3.2vw, 50px); }

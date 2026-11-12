@@ -43,8 +43,8 @@ body {
 
 .board-copy {
   position: absolute;
-  left: 7%;
-  top: 15%;
+  left: 5%;
+  top: 12%;
   width: 48%;
   height: 30%;
   display: flex;

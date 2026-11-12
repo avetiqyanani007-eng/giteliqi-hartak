@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ընտրիր առարկան և բացահայտիր ուսումնական նյութերը։">
+  <title>Ուսումնական նյութեր | Գիտելիքի թվային հարթակ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Գլխավոր էջ">
+      <span class="brand-mark">📖</span>
+      <span>Գիտելիքի<br>թվային հարթակ</span>
+    </a>
+    <nav class="main-nav" aria-label="Հիմնական ընտրացանկ">
+      <a href="index.html">⌂ Գլխավոր</a>
+      <a class="active" href="subjects.html">▤ Ուսումնական նյութեր</a>
+      <a href="index.html#games">🎮 Կրթական խաղեր</a>
+      <a href="index.html#links">↗ Օգտակար հղումներ</a>
+      <a href="index.html#about">ⓘ Մեր մասին</a>
+    </nav>
+  </header>
+
+  <main class="subjects-page">
+    <a class="back-link" href="index.html">← Վերադառնալ գլխավոր էջ</a>
+    <div class="subjects-heading">
+      <p class="eyebrow">Բացահայտիր նոր գիտելիքներ</p>
+      <h1>Ուսումնական նյութեր</h1>
+      <p>Ընտրի՛ր քեզ հետաքրքրող առարկան։</p>
+      <span class="heading-ornament">✦ ───────── ✦</span>
+    </div>
+
+    <section class="subject-grid" aria-label="Առարկաների ցանկ">
+      <button class="subject-card" data-subject="Հայոց լեզու"><span class="subject-icon">Աա</span><strong>Հայոց լեզու</strong></button>
+      <button class="subject-card" data-subject="Գրականություն"><span class="subject-icon">📚</span><strong>Գրականություն</strong></button>
+      <button class="subject-card" data-subject="Մաթեմատիկա"><span class="subject-icon">∑</span><strong>Մաթեմատիկա</strong></button>
+      <button class="subject-card" data-subject="Պատմություն"><span class="subject-icon">🏛️</span><strong>Պատմություն</strong></button>
+      <button class="subject-card" data-subject="Օտար լեզուներ"><span class="subject-icon">ABC</span><strong>Օտար լեզուներ</strong></button>
+      <button class="subject-card" data-subject="Բնագիտական առարկաներ"><span class="subject-icon">⚗️</span><strong>Բնագիտական առարկաներ</strong></button>
+      <button class="subject-card" data-subject="Արվեստ և մշակույթ"><span class="subject-icon">🎨</span><strong>Արվեստ և մշակույթ</strong></button>
+      <button class="subject-card" data-subject="ՏՀՏ և տեխնոլոգիաներ"><span class="subject-icon">💻</span><strong>ՏՀՏ և տեխնոլոգիաներ</strong></button>
+    </section>
+
+    <p class="selection-note" id="selection-note" aria-live="polite">Ընտրի՛ր առարկան՝ դրա ուսումնական նյութերը բացելու համար։</p>
+    <footer class="simple-footer">Գիտելիքի թվային հարթակ · Սովորի՛ր։ Բացահայտի՛ր։ Խաղա՛։</footer>
+  </main>
+  <script>
+    document.querySelectorAll(".subject-card").forEach(card => {
+      card.addEventListener("click", () => {
+        const subject = card.dataset.subject;
+        document.getElementById("selection-note").textContent =
+          `«${subject}» բաժնի նյութերը շուտով կավելացվեն։`;
+        document.querySelectorAll(".subject-card").forEach(item => item.classList.remove("selected"));
+        card.classList.add("selected");
+      });
+    });
+  </script>
+</body>
+</html>
